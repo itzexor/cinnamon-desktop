@@ -1437,7 +1437,7 @@ gnome_rr_config_apply_with_time (GnomeRRConfig *config,
 
 	
 	gdk_flush ();
-	gdk_error_trap_pop (); // ignore errors
+	gdk_error_trap_pop_ignored ();
     }
 
     if (result == TRUE)

@@ -494,7 +494,7 @@ gnome_desktop_thumbnail_factory_finalize (GObject *object)
 
   priv = factory->priv;
 
-  g_clear_pointer (&priv->thumbnailers, thumbnailer_unref);
+  g_list_free_full (priv->thumbnailers, (GDestroyNotify)thumbnailer_unref);
   g_clear_pointer (&priv->mime_types_map, g_hash_table_destroy);
 
   if (priv->monitors)
